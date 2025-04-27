@@ -15,6 +15,7 @@ document.getElementById("cart-cnt").innerText = userCart.items.length;
 console.log(localStorage.clickedItem);
 
 const productCard = document.createElement('div');
+productCard.className="item";
 productCard.innerHTML = `
 <img src="${products[localStorage.clickedItem].img}"> 
 <div class="">
