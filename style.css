@@ -2,8 +2,12 @@
 {
   background-color: #ebedec;
 }
+
+
+
 .logo{
-  width: 5%;
+  width: 8%;
+  
 }
 
 .nav-cart{
@@ -28,7 +32,7 @@
 }
 .abc {
   display: flex;       
-  flex-wrap: wrap;   
+  /* flex-wrap: wrap;    */
   align-items: center;    
   gap: 0px;              
 }
