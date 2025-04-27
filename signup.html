@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - QuickCart</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+    <body style="background: linear-gradient(365deg, #667eea 0%, #764ba2 100%);">
+
+        <div class="text-center">
+            <h2 class="text-white">Welcome to QuickCart</h2>
+        </div>
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="card shadow-lg" style="width: 26rem;">
+            <div class="card-header bg-primary text-white">
+                <h4 class="card-title mb-0">Create Your Account</h4>
+            </div>
+            <div class="card-body p-4">
+                <form id="signupForm" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="nameSignup" class="form-label">Full Name</label>
+                        <input id="nameSignup" type="text" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Please enter a valid name using only letters without spaces.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="emailSignup" class="form-label">Email Address</label>
+                        <input id="emailSignup" type="email" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Please enter a valid email.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="passwordSignup" class="form-label">Password</label>
+                        <input id="passwordSignup" type="password" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Please enter a password.
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="passwordSignupRepeated" class="form-label">Repeat Password</label>
+                        <input id="passwordSignupRepeated" type="password" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Passwords must match.
+                        </div>
+                    </div>
+
+                    <div class="d-grid">
+                        <button  class="btn btn-primary btn-lg" id="SignupButton">
+                            Sign Up
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer bg-light text-center">
+                Already have an account? <a href="index.html" class="text-decoration-none">Log In</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="main.js"></script> -->
+    <script src="sign.js" type="module"></script>
+    <script src="bootstrap.bundle.js"></script>
+    
+</body>
+</html>
+
+
+
+
+
+
+

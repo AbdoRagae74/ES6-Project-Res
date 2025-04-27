@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - QuickCart</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body style="background: linear-gradient(126deg, #667eea 0%, #764ba2 100%);">
+
+    <div class="container d-flex flex-column justify-content-center align-items-center min-vh-100">
+
+        <div class="text-center mb-4 text-white">
+            <h1 class="display-5 fw-bold">QuickCart</h1>
+            <p class="lead">Welcome back! Please login to continue</p>
+        </div>
+
+        <div class="login-card bg-white p-4" style="width: 100%; max-width: 400px;">
+            <form id="loginForm">
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input id="email"  type="text" class="form-control">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input id="password" type="password" class="form-control">
+                    <div hidden class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2 mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg" id="loginBtn">
+                         Log in
+                    </button>
+                </div>
+
+                <div class="text-center mt-3">
+                    <a href="signup.html" class="text-decoration-none">Don't have an account? Sign up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"  type="module" ></script>
+    <script src="bootstrap.bundle.js"></script>
+    
+
+</body>
+</html>

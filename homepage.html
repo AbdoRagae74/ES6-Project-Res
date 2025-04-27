@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - QuickCart</title>
+    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+<body>
+    <section id="header" class="">
+        <div class="abc">
+            <img src="images/logo.jpeg" class="logo" alt="">
+            <ul class="nav-list header-link">
+              <li ><a href="#">Home</a></li>
+              <li ><a href="#">Contact</a></li>
+            </ul>
+        </div>
+            <ul class="navbar">
+              <div class="cart-icon">
+                <a href="cart.html"> <i class="fas fa-shopping-cart cart nav-cart"></i> </a>
+                <span id="cart-cnt" class="cart-counter">0</span>
+              </div>
+                <li><a href="#" id="user-name">UserName</a></li>
+                <li><a href="#"id="log-out">logout</a></li>
+                
+            </ul>
+
+    </section>
+
+    
+    <section class="product "> 
+        <h2 class="product-category  ">best selling</h2>
+        <div class="product-slider">
+        <button class="pre-btn"><img src="images/arrow.png" alt=""></button>
+        <div class="product-container">
+            <div class="product-card">                
+                <div class="product-image">
+                    <img src="images/slider1.jpeg" class="product-thumb">
+                    <button class="card-btn" data-id="${i.id}">Add to wishlist</button>
+                </div>
+               
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img src="images/slider3.jpeg" class="product-thumb">
+                <button class="card-btn" data-id="${i.id}">Add to wishlist</button>
+              </div>             
+            </div>
+            
+            <div class="product-card">
+              <div class="product-image">
+                <img src="images/slider4.jpeg" class="product-thumb">
+                <button class="card-btn" data-id="${i.id}">Add to wishlist</button>
+              </div>             
+            </div>
+        </div>
+        <button class="nxt-btn"><img src="images/arrow.png" alt=""></button>
+        </div>              
+    </section>
+
+   <section id="product1" class="section-p1">
+       <h2>Featured Products</h2>
+       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat quaerat cum impedit alias debitis velit llam.</p>
+       <div class="filter d-flex flex-column justify-content-center align-items-center" >
+        
+        <h6 class="mt-2">Category</h6> 
+        <select class ="col-1 custom-select"  id="select-category">
+          <option value="Electronics">Electronics</option>
+          <option value="Fashion">Fashion</option>
+          <option value="Home Appliances">Home Appliances</option>
+          <option value="Sports">Sports</option>
+          <option value="Books">Books</option>
+        </select>
+        
+
+          <h6 class="mt-2 ">price starting from</h6> 
+          <input  class="custom-input"type="number" min ="0" value="0" id="priceInp" >
+       </div>
+    <!-- <div class="cat-prod d-flex flex-row "> -->
+      <div class=" d-flex flex-row justify-content-center section-p1">
+           <div class="categories-container d-flex flex-row justify-content-center flex-wrap ">
+               <button type="button" onclick = 'changeDisplayedProducts("All",0)' class="btn col-2 btn-info m-3">All</button>
+               <button type="button" onclick = 'changeDisplayedProducts("Electronics",0)' class="btn col-2 btn-info m-3">Electronics</button>
+               <button type="button" onclick = 'changeDisplayedProducts("Fashion",0)' class="btn col-2 btn-info m-3">Fashion</button>
+               <button type="button" onclick = 'changeDisplayedProducts("Home Appliances",0)' class="btn col-2 btn-info m-3">Home</button>
+               <button type="button" onclick = 'changeDisplayedProducts("Sports",0)' class="btn col-2 btn-info m-3">Sports</button>
+               <button type="button" onclick = 'changeDisplayedProducts("Books",0)' class="btn col-2 btn-info m-3">Books</button> 
+            </div>
+    </div>
+    <div class="pro-container">
+
+    </div>
+    
+        </div>
+   </section>
+
+
+   <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3 class="footer-heading">QuickCart</h3>
+        <p class="footer-text">Your one-stop destination for quality products at affordable prices.</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+  
+
+      <div class="footer-section ">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+  
+
+      <div class="footer-section ">
+        <h3 class="footer-heading">Customer Service</h3>
+        <ul class="footer-links">
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Return Policy</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </div>
+  
+
+      
+    </div>
+  
+    <div class="copyright ">
+      <p>&copy; All rights reserved.</p>
+    </div>
+  </footer>
+
+    <script src="homepage.js" ></script>
+</body>
+</html>
