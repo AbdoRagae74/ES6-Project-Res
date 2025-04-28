@@ -11,20 +11,13 @@ logout.onclick = function () {
 }
 
 let cart = JSON.parse(localStorage.getItem("carts")) || [];
-let pay = document.getElementById("pay");
 
 let userCart; 
-for(var i of cart){
-  if(i.mail == localStorage.currentUser)        
-    {userCart = i;
-      break;
-    }
-}
+userCart = cart.find(item=> item.mail == localStorage.currentUser );
+
+
 if(userCart)
 document.getElementById("cart-cnt").innerText = userCart.items.length;
-
-
-
 
 const userIndex = cart.findIndex(item => item.mail === localStorage.currentUser);
 
@@ -33,29 +26,29 @@ const userIndex = cart.findIndex(item => item.mail === localStorage.currentUser)
     const cartItemsContainer = document.querySelector('.cart-items');
     cartItemsContainer.innerHTML = '';
     let total = 0;
-    if(userCart.items)
-    for (var i of userCart.items ){
-        const itemTotal = products[i.id].price * i.cnt;
+    if(userCart && userCart.items)
+      userCart.items.forEach(element => {
+        const itemTotal = products[element.id].price * element.cnt;
         total += itemTotal;
     const cartItem = document.createElement('div');
       cartItem.className = 'cart-item';
       cartItem.innerHTML = `
-      <img src="${products[i.id].img}"  class="item-image">
+      <img src="${products[element.id].img}"  class="item-image">
         <div class="item-details">
-          <div class="item-title">${products[i.id].title}</div>
-          <div class="item-price">$${products[i.id].price.toFixed(2)}</div>
+          <div class="item-title">${products[element.id].title}</div>
+          <div class="item-price">$${products[element.id].price.toFixed(2)}</div>
           <div class="quantity-controls">
-            <button class="quantity-btn minus" data-id="${products[i.id].id}">-</button>
-            <input  type="number" class="quantity-input" value="${i.cnt}" min="1" data-id="${products[i.id].id}" readonly>
-            <button class="quantity-btn plus" data-id="${products[i.id].id}">+</button>
+            <button class="quantity-btn minus" data-id="${products[element.id].id}">-</button>
+            <input  type="number" class="quantity-input" value="${element.cnt}" min="1" data-id="${products[element.id].id}" readonly>
+            <button class="quantity-btn plus" data-id="${products[element.id].id}">+</button>
           </div>
         </div>
         <div class="item-total">$${itemTotal.toFixed(2)}</div>
-        <button class="remove-item" data-id="${products[i.id].id}">×</button>
-      `;
-      
+        <button class="remove-item" data-id="${products[element.id].id}">×</button>
+      `;      
       cartItemsContainer.appendChild(cartItem);
-    }      
+      });
+   
     document.querySelector('.total-amount').textContent = `$${total.toFixed(2)}`;
   }
   
@@ -101,23 +94,31 @@ const userIndex = cart.findIndex(item => item.mail === localStorage.currentUser)
   });
   
   pay.addEventListener("click",function(){
-    cart.splice(userIndex, 1);
-    localStorage.setItem('carts', JSON.stringify(cart));
-    alert('Thank you for your purchase!');
-    location.reload();
+    
+    if(userCart==undefined){
+      Swal.fire({
+        title: 'Your cart is empty!',
+        text: 'Please add items to cart first.',
+        icon: 'warning',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#d33'
+      });
+    }
+    else{
+      
+      cart.splice(userIndex, 1);
+      localStorage.setItem('carts', JSON.stringify(cart));    
+      Swal.fire({
+        title: 'Purchase is done!',
+        text: 'Thanks for your purchase.your order will be shipped soon.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      }).then((res)=>{
+        if(res.isConfirmed){
+          location.replace("homepage.html");}
+        });
+      }
+
   })
   renderCart();
 
-  // document.querySelector('.cart-items').addEventListener('change', function(e) {
-  //   if (e.target.classList.contains('quantity-input')) {
-  //     const id = parseInt(e.target.dataset.id);
-  //     const item = cart.find(item => item.id === id);
-  //     const newQuantity = parseInt(e.target.value) || 1;
-      
-  //     if (item && newQuantity >= 1) {
-  //       item.quantity = newQuantity;
-  //       renderCart();
-  //     }
-  //   }
-  // });
-  // if(userCart)
