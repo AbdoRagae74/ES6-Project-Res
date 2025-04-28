@@ -601,14 +601,14 @@ font-size: 15px;
 .custom-input,
 .custom-select {
   
-   padding: 10px 15px;
+  padding: 10px 15px;
   border: 2px solid #ccc;
   border-radius: 8px;
   font-size: 16px;
   outline: none;
   transition: all 0.3s ease;
-  width: 20%;
-  /* max-width: 20%; */
+  /* width: 20%;
+  min-width: 20%; */
   box-sizing: border-box; 
 }
 
